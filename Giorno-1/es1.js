@@ -17,7 +17,6 @@ class Utente {
   }
 }
 
-// Esempio di utilizzo:
 const utente1 = new Utente("Mario", "Rossi", 30, "Roma");
 const utente2 = new Utente("Luigi", "Verdi", 25, "Milano");
 
