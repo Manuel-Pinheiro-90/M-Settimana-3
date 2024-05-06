@@ -6,7 +6,7 @@ class Banana {
     this.fede = _fede;
   }
 
-  confrontadede() {
+  confrontafede() {
     if (this.fede === "Ecclesia") {
       return `${this.nome} è un vero fedele, e merita l'assoluzione dell'alto sacerdote`;
     } else {
@@ -18,5 +18,5 @@ class Banana {
 const utente1 = new Banana("Armillo", "paladino", "Alabarda", "Ecclesia");
 const utente2 = new Banana("Luigi", "ladro", "coltello", "culto di Valagos");
 
-console.log(utente1.confrontadede());
-console.log(utente2.confrontadede());
+console.log(utente1.confrontafede());
+console.log(utente2.confrontafede());

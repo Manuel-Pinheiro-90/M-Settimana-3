@@ -4,7 +4,7 @@ const inputSpecies = document.getElementById("species");
 const inputBreed = document.getElementById("breed");
 const formTag = document.getElementsByTagName("form")[0];
 
-const contacts = []; // Array per memorizzare i contatti
+const petarr = []; // Array per memorizzare i contatti
 
 class Pets {
   constructor(_petName, _ownerName, _species, _breed, _isSameOwner) {
@@ -21,14 +21,14 @@ const updateContacts = function () {
 
   contactsRow.innerHTML = "";
 
-  contacts.forEach((pet) => {
+  petarr.forEach((pet) => {
     const newDiv = document.createElement("div");
 
     newDiv.classList.add("col");
 
     newDiv.innerHTML = `
       <div class="card${
-        pet.isSameOwner ? " border border-success border-3" : ""
+        pet.isSameOwner ? " border border-danger border-4" : ""
       }">
         <div class="card-body">
           <h5 class="card-title">${pet.petName}</h5>
@@ -48,8 +48,8 @@ formTag.addEventListener("submit", function (e) {
 
   // Verifica se il padrone è lo stesso del contatto precedente
   const sameOwner =
-    contacts.length > 0 &&
-    inputOwnerName.value === contacts[contacts.length - 1].ownerName;
+    petarr.length > 0 &&
+    inputOwnerName.value === petarr[petarr.length - 1].ownerName;
 
   const contactFromFormValues = new Pets(
     inputName.value,
@@ -59,9 +59,7 @@ formTag.addEventListener("submit", function (e) {
     sameOwner // Passa true se il padrone è lo stesso del contatto precedente, altrimenti false
   );
 
-  contacts.push(contactFromFormValues);
-
-  console.log("CONTATTO CREATO", contactFromFormValues);
+  petarr.push(contactFromFormValues);
 
   inputName.value = "";
   inputOwnerName.value = "";
