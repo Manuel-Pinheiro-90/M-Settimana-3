@@ -7,10 +7,16 @@ class Banana {
   }
 
   confrontadede() {
-    if (this.fede === Ecclesia) {
-      `${this.firstName} è un vero fedele, e merita l'assoluzione dell'alto sacerdote`;
+    if (this.fede === "Ecclesia") {
+      return `${this.nome} è un vero fedele, e merita l'assoluzione dell'alto sacerdote`;
     } else {
-      `${this.firstName} verrà bruciato sulla pira.`;
+      return `${this.nome} verrà bruciato sulla pira.`;
     }
   }
 }
+
+const utente1 = new Banana("Armillo", "paladino", "Alabarda", "Ecclesia");
+const utente2 = new Banana("Luigi", "ladro", "coltello", "culto di Valagos");
+
+console.log(utente1.confrontadede());
+console.log(utente2.confrontadede());
