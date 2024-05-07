@@ -10,28 +10,36 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="text-center"><h1>Form</h1></header>
+  <body class="bg-black">
+    <header class="text-center">
+      <h1 class="text-light mt-4">Dimmi qualcosa e tutti lo ricorderanno!</h1>
+    </header>
     <main>
       <div class="container">
         <div class="row">
+          <div class="col 12 text-center">
+            <img src="./assets/124.png" alt="" />
+          </div>
           <div class="col-12 text-center">
             <form id="myForm">
               <div class="m-5">
                 <textarea
                   id="zona"
-                  class="form-control border border-2 border-dark"
+                  class="form-control border border-2 border-dark text-center"
                 ></textarea>
                 <input
                   type="text"
-                  class="form-control border border-2 border-dark"
+                  class="form-control border border-2 border-dark text-center"
                   id="content"
                 />
               </div>
 
-              <button class="btn btn-success" onclick="salva()">Salva</button>
-              <button class="btn btn-warning" onclick="cancella()">
+              <button class="btn btn-success mb-3" onclick="salva()">
+                Salva
+              </button>
+              <button class="btn btn-warning mb-3" onclick="cancella()">
                 cancella
               </button>
             </form>
