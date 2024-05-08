@@ -1,8 +1,7 @@
-// Funzione per aggiornare il contatore di tempo
+// Funzione per aggiornare
 function updateTimer() {
-  // Controlla se esiste un valore salvato nella sessione
+  // Controllo se esiste un valore salvato nella sessione
   if (sessionStorage.startTime) {
-    // Calcola il tempo trascorso in secondi
     var currentTime = Math.floor(Date.now() / 1000);
     var startTime = parseInt(sessionStorage.startTime);
     var elapsedTime = currentTime - startTime;
@@ -12,7 +11,7 @@ function updateTimer() {
   }
 }
 //aiuto
-// Funzione per avviare il contatore quando la pagina viene caricata
+
 window.onload = function () {
   // Controlla se il tempo di inizio è già salvato nella sessione
   if (!sessionStorage.startTime) {
