@@ -12,7 +12,7 @@ const generateCard = function (arrayOfBook) {
       <h5 class="card-title">${book.title}</h5>
       <p class="card-text"> £ ${book.price}</p>
       <div>
-      <a href="#" class="btn btn-primary">Compra</a>
+      <button class="btn btn-primary buy-btn">Compra</button>
       <button class="btn mt-auto btn-danger delete-btn ">Cancella</button>
       </div>
       </div>
@@ -22,6 +22,9 @@ const generateCard = function (arrayOfBook) {
     deleteButton.addEventListener("click", () => {
       newDiv.remove(); // Rimuove l'elemento genitore della carta
     });
+
+    const buyButton = newDiv.querySelector(".buy-btn");
+    buyButton.addEventListener("click", addToCart);
 
     ncolonne.appendChild(newDiv);
   });
@@ -52,3 +55,32 @@ const getBook = function () {
 };
 
 getBook();
+
+// Funzione per aggiungere un libro al carrello
+const addToCart = function (event) {
+  // Trova il titolo del libro dalla carta
+  const card = event.target.closest(".card");
+  if (!card) return; // Se non trova la carta genitore, esce dalla funzione
+
+  const titleElement = card.querySelector(".card-title");
+  if (!titleElement) return; // Se non trova l'elemento con la classe card-title, esce dalla funzione
+
+  const title = titleElement.innerText;
+
+  // Crea un nuovo elemento li per il carrello
+  const coltitle = document.createElement("li");
+  coltitle.innerText = title;
+
+  // Aggiungi l'elemento al carrello
+  const rowCart = document.getElementById("carrello");
+  if (rowCart) {
+    rowCart.appendChild(coltitle);
+
+    // Aggiorna il localStorage con il nuovo libro nel carrello
+    let shopbook = localStorage.getItem("shopbook")
+      ? JSON.parse(localStorage.getItem("shopbook"))
+      : [];
+    shopbook.push(title);
+    localStorage.setItem("shopbook", JSON.stringify(shopbook));
+  }
+};
