@@ -6,11 +6,11 @@ const generateCard = function (arrayOfBook) {
 
     console.log("book");
     newDiv.innerHTML = `
-    <div class="card  m-2 "  style="width: 20rem ;">
+    <div class="card  mx4 my-4  "  style="width: 20rem ;">
     <img src="${book.img}" class="card-img-top " alt="...">
     <div class="card-body  d-flex flex-column align-items-center justify-content-between">
       <h5 class="card-title">${book.title}</h5>
-      <p class="card-text">${book.price}</p>
+      <p class="card-text"> £ ${book.price}</p>
       <div>
       <a href="#" class="btn btn-primary">Compra</a>
       <button class="btn mt-auto btn-danger delete-btn ">Cancella</button>
