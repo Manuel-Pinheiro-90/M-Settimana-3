@@ -56,6 +56,7 @@ const getBook = function () {
 
 getBook();
 
+
 // Funzione per aggiungere un libro al carrello
 const addToCart = function (event) {
   // Trova il titolo del libro dalla carta
