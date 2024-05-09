@@ -32,7 +32,7 @@ const getKnights = function () {
                   <h5 class="card-title">${knight.id}</h5>
                   <p class="card-text">${knight.photographer}</p>
                   <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary">Hide</button>
+                    <button class="btn btn-primary">Edit</button>
                     <a href="${knight.url}" class="btn btn-info">INFO</a>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ const getstar = function () {
                     <h5 class="card-title">${star.id}</h5>
                     <p class="card-text">${star.photographer}</p>
                     <div class="d-flex justify-content-between">
-                      <button class="btn btn-primary">Hide</button>
+                      <button class="btn btn-primary">Edit</button>
                       <a href="${star.url}" class="btn btn-info">INFO</a>
                     </div>
                   </div>
